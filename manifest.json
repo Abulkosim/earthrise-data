@@ -94,6 +94,15 @@
    "source": "AVGVISIB_85S_060M_201608.IMG",
    "bytes": 35306503
   },
+  "sun_crop": {
+   "file": "validation/avgvisib_sun_crop.bin.gz",
+   "n": 1024,
+   "res": 60.0,
+   "scale": 4e-05,
+   "offset": 2017,
+   "source": "AVGVISIB_85S_060M_201608.IMG rows and columns 2017 to 3040",
+   "bytes": 1422988
+  },
   "earth": {
    "file": "validation/avgvisib_earth.bin.gz",
    "n": 5058,
@@ -101,6 +110,15 @@
    "scale": 4e-05,
    "source": "AVGVISIB_85S_060M_201608_EARTH.IMG",
    "bytes": 26025214
+  },
+  "earth_crop": {
+   "file": "validation/avgvisib_earth_crop.bin.gz",
+   "n": 1024,
+   "res": 60.0,
+   "scale": 4e-05,
+   "offset": 2017,
+   "source": "AVGVISIB_85S_060M_201608_EARTH.IMG rows and columns 2017 to 3040",
+   "bytes": 969591
   }
  }
 }
