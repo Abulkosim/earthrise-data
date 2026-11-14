@@ -1,25 +1,11 @@
 # earthrise-data
 
-Prepared data for [Earthrise](https://github.com/Abulkosim/earthrise), a lunar landing site navigator
-built for the NASA Space Apps Challenge 2026. The app loads these files in the browser.
+Prepared terrain data for [Earthrise](https://github.com/Abulkosim/earthrise), a map of the Moon's south pole made for the NASA Space Apps Challenge 2026.
 
-Everything here is derived from public NASA data by `pipeline/scripts/build_web_data.py` in the
-Earthrise repository. Nothing is edited by hand.
+This repository holds the manifest, the ephemeris table, the comparison maps for the validation page, and the terrain at 960 m, 160 m, 80 m and 40 m.
 
-| Path | What | Source |
-|---|---|---|
-| `dem/far.bin.gz` | Elevation, 60-90 S, 960 m grid | LOLA `LDEM_60S_240M`, 4x4 block mean |
-| `dem/mid.bin.gz` | Elevation, 80-90 S, 160 m grid | LOLA `LDEM_80S_80M`, 2x2 block mean |
-| `dem/t80`, `dem/t40`, `dem/t20` | Elevation tiles at 80, 40 and 20 m (20 m south of 84 S) | LOLA `LDEM_80S_80M`, `_40M`, `_20M` |
-| `ephem.bin` | Hourly Sun and Earth vectors seen from the Moon, 2023-2045 | JPL DE440 through SPICE (NAIF kernels) |
-| `fixtures.json` | Reference answers for the engine check | Earthrise reference model |
-| `validation/` | Crops of NASA Goddard's average visibility maps | `AVGVISIB_85S_060M_201608` |
-| `manifest.json` | Projection, grid sizes, time base | |
+The files are derived from NASA data: the Lunar Orbiter Laser Altimeter (LOLA) elevation maps as adjusted at NASA Goddard (Barker et al. 2021, 2023), SPICE ephemerides, and NASA Goddard's illumination maps. Sources, papers and licences are listed in the project's [CREDITS.md](https://github.com/Abulkosim/earthrise/blob/main/CREDITS.md). `pipeline/scripts/build_web_data.py` in the project builds these files from the originals.
 
-Grids are int16, height = value x 0.5 m above a 1737.4 km sphere, each row delta-coded, then gzip.
-Projection: south polar stereographic, spherical, longitude 0 up.
+This project is not endorsed by NASA.
 
-LOLA data: NASA / GSFC / MIT, Lunar Reconnaissance Orbiter, from the PDS Geosciences Node.
-Ephemeris: NASA / JPL. NASA does not endorse this project.
-
-The preparation code was written with AI assistance (Claude); see the Earthrise README.
+Written with AI assistance (Claude); see the project's README.
