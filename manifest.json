@@ -1,0 +1,106 @@
+{
+ "projection": {
+  "type": "south polar stereographic, spherical",
+  "radius_m": 1737400.0,
+  "lon0_deg": 0,
+  "note": "x = 2R tan(pi/4+lat/2) sin(lon), y = 2R tan(pi/4+lat/2) cos(lon); row 0 is +y"
+ },
+ "height": {
+  "dtype": "int16",
+  "scale_m": 0.5,
+  "encoding": "row-wise delta, little-endian, gzip"
+ },
+ "dem": {
+  "far": {
+   "file": "dem/far.bin.gz",
+   "n": 1940,
+   "res": 960.0,
+   "source": "LDEM_60S_240M block mean 4x4"
+  },
+  "mid": {
+   "file": "dem/mid.bin.gz",
+   "n": 3800,
+   "res": 160.0,
+   "source": "LDEM_80S_80M block mean 2x2"
+  },
+  "tiles": {
+   "size": 512,
+   "nodata": -32768,
+   "t80": {
+    "n": 7600,
+    "res": 80.0,
+    "source": "LDEM_80S_80M"
+   },
+   "t40": {
+    "n": 15200,
+    "res": 40.0,
+    "source": "LDEM_80S_40M"
+   },
+   "t20": {
+    "n": 30400,
+    "res": 20.0,
+    "source": "LDEM_80S_20M",
+    "min_radius_m": 0,
+    "max_radius_m": 182106.5514527116
+   }
+  },
+  "bytes": {
+   "far": 5602225,
+   "mid": 15738636,
+   "t80": 52102000,
+   "t40": 162046160,
+   "t20": 162023939
+  }
+ },
+ "ephem": {
+  "file": "ephem.bin",
+  "epoch_utc": "2023-01-01T00:00:00",
+  "step_s": 3600,
+  "rows": 192865,
+  "columns": [
+   "sun_x",
+   "sun_y",
+   "sun_z",
+   "sun_dist_km",
+   "earth_x_km",
+   "earth_y_km",
+   "earth_z_km",
+   "dsn_bits_plus_eclipse"
+  ],
+  "frame": "MOON_ME (DE440), light time and stellar aberration applied, origin Moon centre",
+  "dsn": {
+   "stations": [
+    "Goldstone",
+    "Madrid",
+    "Canberra"
+   ],
+   "mask_deg": 10.0,
+   "earth_rotation": "IAU_EARTH"
+  },
+  "kernels": [
+   "naif0012.tls",
+   "pck00011.tpc",
+   "de440s.bsp",
+   "moon_pa_de440_200625.bpc",
+   "moon_de440_250416.tf"
+  ]
+ },
+ "validation": {
+  "sun": {
+   "file": "validation/avgvisib_sun.bin.gz",
+   "n": 5058,
+   "res": 60.0,
+   "scale": 4e-05,
+   "source": "AVGVISIB_85S_060M_201608.IMG",
+   "bytes": 35306503
+  },
+  "earth": {
+   "file": "validation/avgvisib_earth.bin.gz",
+   "n": 5058,
+   "res": 60.0,
+   "scale": 4e-05,
+   "source": "AVGVISIB_85S_060M_201608_EARTH.IMG",
+   "bytes": 26025214
+  }
+ }
+}
